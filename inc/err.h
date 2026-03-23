@@ -1,0 +1,10 @@
+#define RES_EOK               0
+#define RES_EFAILED          -1
+#define RES_EBADPARM         -2
+#define RES_EFULL            -3
+#define RES_EEMPTY           -4
+#define RES_ENOMEMORY        -5
+#define RES_EEXISTS          -6
+#define RES_ENOTEXIST        -7
+#define RES_ENOTALLOWED      -8
+#define RES_EUNSUPPORTED     -9
