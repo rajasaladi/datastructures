@@ -23,7 +23,7 @@ int stack2_test_1000(stack2_t st)
 {
   int i, k, elem, res, test_status = 0; /* SUCCESS */
 
-  printf("Stack Test 1: Verify 1000 pushs and 1000 pops\n");
+  printf("Stack Test 1: Verify 1000 pushes and 1000 pops\n");
   printf("Pushing 1000 entries..\n");
   for (i = 1; i <= 1000; i++) {
     if ((res = stack2_push1(st, (void *)&i))) {

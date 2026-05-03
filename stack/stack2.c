@@ -134,7 +134,7 @@ void stack2_display(stack2_t st, customfn_t fn)
   if (stack2_is_empty1(st)) {
     printf("Stack1 is Empty!\n");
   } else {
-    printf("Stack1\nc:%d ", st->top1+1);
+    printf("Stack1\nc:%d\n", st->top1+1);
     for (i = st->top1; i >= 0; i--, count++) {
       //printf("%4d (0x%x)", st->arr[i], (int)&st->arr[i]);
       if (!fn) {
@@ -150,7 +150,7 @@ void stack2_display(stack2_t st, customfn_t fn)
     printf("\n");
   }
 
-  printf("Stack2\nc:%d ", st->stacks_size - st->top2);
+  printf("Stack2\nc:%d\n", st->stacks_size - st->top2);
   for (i = st->top2; i < st->stacks_size; i++, count++) {
     //printf("%4d (0x%x)", st->arr[i], (int)&st->arr[i]);
     if (!fn) {
