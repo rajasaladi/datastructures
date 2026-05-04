@@ -2,7 +2,7 @@
  * Author: Rajasekhar Saladi                                                  *
  * Module: check_paranthesis.c                                                *
  * Description: Implements algorithm to check if paratheses match using stack *
- * Created: January, 2019                                                     *
+ * Created: Jan 2019                                                          *
 *******************************************************************************
 */
 #include <stdio.h>

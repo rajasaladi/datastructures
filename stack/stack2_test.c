@@ -3,7 +3,7 @@
  * Module: stack2_test.c                                                      *
  * Description: Implements Test module to test Data Structure with two stacks *
  *              in one array.                                                 *
- * Created: January, 2019                                                     *
+ * Created: Jan 2019                                                          *
 *******************************************************************************
 */
 #include <stdio.h>

@@ -2,7 +2,7 @@
  * Author: Rajasekhar Saladi                                                  *
  * Module: stack2.c                                                           *
  * Description: Implements Data Structure with two stacks in one array.       *
- * Created: January, 2019                                                     *
+ * Created: Jan 2019                                                          *
 *******************************************************************************
 */
 #include <stdio.h>

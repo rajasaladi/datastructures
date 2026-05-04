@@ -2,7 +2,7 @@
  * Author: Rajasekhar Saladi                                                  *
  * Module: queue_array.c                                                      *
  * Description: Implements Queue Data Structure using Array.                  *
- * Created: July, 2019                                                        *
+ * Created: Jul 2019                                                          *
 *******************************************************************************
 */
 #include <stdio.h>

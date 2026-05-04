@@ -2,7 +2,7 @@
  * Author: Rajasekhar Saladi                                                  *
  * Module: stack_array.c                                                      *
  * Description: Implements Stack Data Structure using Array.                  *
- * Created: January, 2019                                                     *
+ * Created: Jan 2019                                                          *
 *******************************************************************************
 */
 #include <stdio.h>

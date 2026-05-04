@@ -2,7 +2,7 @@
  * Author: Rajasekhar Saladi                                                  *
  * Module: stack.h                                                            *
  * Description: Defines interface for Stack Datastructure.                    *
- * Created: January, 2019                                                     *
+ * Created: Jan 2019                                                          *
 *******************************************************************************
 */
 #ifndef STACK_H

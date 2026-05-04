@@ -2,7 +2,7 @@
  * Author: Rajasekhar Saladi                                                  *
  * Module: queue_test.c                                                       *
  * Description: Implements Test module to test Queue Data Structure.          *
- * Created: July, 2019                                                        *
+ * Created: Jul 2019                                                          *
 *******************************************************************************
 */
 #include <stdio.h>

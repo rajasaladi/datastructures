@@ -2,7 +2,7 @@
  * Author: Rajasekhar Saladi                                                  *
  * Module: queue.h                                                            *
  * Description: Defines interface for Queue Datastructure.                    *
- * Created: July, 2019                                                        *
+ * Created: Jul 2019                                                          *
 *******************************************************************************
 */
 #ifndef QUEUE_H

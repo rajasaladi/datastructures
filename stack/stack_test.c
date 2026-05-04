@@ -2,7 +2,7 @@
  * Author: Rajasekhar Saladi                                                  *
  * Module: stack_test.c                                                       *
  * Description: Implements Test module to test Stack Data Structure.          *
- * Created: January, 2019                                                     *
+ * Created: Jan 2019                                                          *
 *******************************************************************************
 */
 #include <stdio.h>

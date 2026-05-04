@@ -3,7 +3,7 @@
  * Module: stack2.h                                                           *
  * Description: Defines interface for Datastructure with two stacks using one *
  *              array.                                                        *
- * Created: January, 2019                                                     *
+ * Created: Jan 2019                                                          *
 *******************************************************************************
 */
 #ifndef STACK2_H
