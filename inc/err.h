@@ -1,3 +1,10 @@
+/******************************************************************************
+ * Author: Rajasekhar Saladi                                                  *
+ * Module: err.h                                                              *
+ * Description: Defines various common error codes used by all modules.       *
+ * Created: Unknown                                                           *
+*******************************************************************************
+*/
 #define EOK               0
 #define EFAILED          -1
 #define EBADPARM         -2
