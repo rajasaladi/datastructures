@@ -181,7 +181,7 @@ void bst_destroy(bst_t t)
  *   key - key
  *   pvalue - pointer to object where value is copied
  * Return:
- *   RES_EOK or error code.
+ *   EOK or error code.
  *
 */
 int bst_find(bst_t t, int key, int *pvalue)
@@ -189,15 +189,15 @@ int bst_find(bst_t t, int key, int *pvalue)
   bstnode *p;
 
   if (!t || !pvalue)
-    return RES_EBADPARM;
+    return EBADPARM;
 
   p = bst_find_internal(t->root, key, NULL);
   if (!p) {
-    return RES_ENOTEXIST;
+    return ENOTEXIST;
   }
 
   *pvalue = p->data;
-  return RES_EOK;
+  return EOK;
 }
 
 /*
@@ -208,15 +208,15 @@ int bst_find(bst_t t, int key, int *pvalue)
  *   t - BST
  *   pvalue - pointer to object where value is copied
  * Return:
- *   RES_EOK or error code.
+ *   EOK or error code.
  *
 */
 int bst_findmin(bst_t t, int *pvalue)
 {
   bstnode *p;
 
-  if (!t || !pvalue) return RES_EBADPARM;
-  if (!t->root) return RES_ENOTEXIST;
+  if (!t || !pvalue) return EBADPARM;
+  if (!t->root) return ENOTEXIST;
 
   p = t->root;
   while (p->left) {
@@ -224,7 +224,7 @@ int bst_findmin(bst_t t, int *pvalue)
   }
 
   *pvalue = p->data;
-  return RES_EOK;
+  return EOK;
 }
 
 /*
@@ -235,15 +235,15 @@ int bst_findmin(bst_t t, int *pvalue)
  *   t - BST
  *   pvalue - pointer to object where value is copied
  * Return:
- *   RES_EOK or error code.
+ *   EOK or error code.
  *
 */
 int bst_findmax(bst_t t, int *pvalue)
 {
   bstnode *p;
 
-  if (!t || !pvalue) return RES_EBADPARM;
-  if (!t->root) return RES_ENOTEXIST;
+  if (!t || !pvalue) return EBADPARM;
+  if (!t->root) return ENOTEXIST;
 
   p = t->root;
   while (p->right) {
@@ -251,7 +251,7 @@ int bst_findmax(bst_t t, int *pvalue)
   }
 
   *pvalue = p->data;
-  return RES_EOK;
+  return EOK;
 }
 
 /*
@@ -262,20 +262,20 @@ int bst_findmax(bst_t t, int *pvalue)
  *   t - BST
  *   key - key
  *   value - value
- * Return: RES_EOK or error code.
+ * Return: EOK or error code.
  *
 */
 int bst_insert(bst_t t, int key, int value)
 {
   bstnode *p, *parent, *new;
 
-  if (!t) return RES_EBADPARM;
+  if (!t) return EBADPARM;
 
   p = bst_find_internal(t->root, key, &parent);
-  if (p) return RES_EEXISTS;
+  if (p) return EEXISTS;
 
   new = (bstnode *)malloc(sizeof(bstnode));
-  if (!new) return RES_ENOMEMORY;
+  if (!new) return ENOMEMORY;
 
   new->key = key;
   new->data = value;
@@ -290,7 +290,7 @@ int bst_insert(bst_t t, int key, int value)
     t->root = new;
   }
 
-  return RES_EOK;
+  return EOK;
 }
 
 /*
@@ -346,7 +346,7 @@ void bst_delete(bst_t t, int key)
  * Description: Deletes all nodes from the BST.
  * Params:
  *   t - BST
- * Return: RES_EOK or error code.
+ * Return: EOK or error code.
  *
 */
 int bst_delete_all(bst_t t)
@@ -354,10 +354,10 @@ int bst_delete_all(bst_t t)
   bstnode *p, *tmp;
   stack1_t st;
 
-  if (!t || !t->root) return RES_EOK;
+  if (!t || !t->root) return EOK;
 
   st = stack_create(128, sizeof(bstnode *));
-  if (!st) return RES_ENOMEMORY;
+  if (!st) return ENOMEMORY;
 
   p = t->root;
   while (p) {
@@ -379,7 +379,7 @@ int bst_delete_all(bst_t t)
   stack_destroy(st);
   t->root = NULL;
 
-  return RES_EOK;
+  return EOK;
 }
 
 /*

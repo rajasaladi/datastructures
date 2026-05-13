@@ -302,20 +302,20 @@ void avl_destroy(avl_t t)
  *   key - key
  *   pvalue - pointer to object where value is copied
  * Return:
- *   RES_EOK or error code.
+ *   EOK or error code.
  *
 */
 int avl_find(avl_t t, int key, int *pvalue)
 {
   avlnode *p;
 
-  if (!t || !pvalue) return RES_EBADPARM;
+  if (!t || !pvalue) return EBADPARM;
 
   p = avl_find_internal(t->root, key, NULL);
-  if (!p) return RES_ENOTEXIST;
+  if (!p) return ENOTEXIST;
 
   *pvalue = p->data;
-  return RES_EOK;
+  return EOK;
 }
 
 /*
@@ -326,7 +326,7 @@ int avl_find(avl_t t, int key, int *pvalue)
  *   t - AVL tree
  *   key - key
  *   value - value
- * Return: RES_EOK or error code.
+ * Return: EOK or error code.
  *
 */
 int avl_insert(avl_t t, int key, int value)
@@ -334,13 +334,13 @@ int avl_insert(avl_t t, int key, int value)
   int count = 0;
   avlnode *p, *parent;
 
-  if (!t) return RES_EBADPARM;
+  if (!t) return EBADPARM;
 
   p = avl_find_internal(t->root, key, t->st1);
-  if (p) return RES_EEXISTS;
+  if (p) return EEXISTS;
 
   p = (avlnode *)malloc(sizeof(avlnode));
-  if (!p) return RES_ENOMEMORY;
+  if (!p) return ENOMEMORY;
 
   p->key = key;
   p->data = value;
@@ -361,7 +361,7 @@ int avl_insert(avl_t t, int key, int value)
 
   check_balance_path(&t->root, parent, t->st1);
 
-  return RES_EOK;
+  return EOK;
 }
 
 /*
