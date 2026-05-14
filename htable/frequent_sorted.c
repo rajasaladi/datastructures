@@ -40,9 +40,9 @@ int most_frequent_element_sorted(int *a, int n, int *pfreq)
 
 int main()
 {
-  int a[100];
   int i, n, freq;
   int ret = 0;
+  static int a[100];
 
   printf("Enter the number of elements: ");
   scanf("%d", &n);

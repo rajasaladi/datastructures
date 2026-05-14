@@ -250,7 +250,7 @@ int htable_find(htable_t h, int key, int *pelement)
   int i;
   hnode *p;
 
-  if (!h || !h->table ||pelement) return EBADPARM;
+  if (!h || !h->table) return EBADPARM;
 
   i = HTABLE_HASH(h, key);
 
@@ -260,7 +260,7 @@ int htable_find(htable_t h, int key, int *pelement)
     return ENOTEXIST;
   }
 
-  *pelement = p->value;
+  if (pelement) *pelement = p->value;
 
   return EOK;
 }
@@ -275,19 +275,20 @@ void htable_print(htable_t h)
     return;
   }
 
+  printf("Hash Table:\n");
   for (i = 0; i < h->num_bins; i++) {
     if (h->table[i]) {
       count++;
       printf("Bin%d", i);
       p = h->table[i];
       while(p) {
-        //printf(" - %d,%d", p->key, p->value);
         printf(" -> [%d,%d]", p->key, p->value);
         p = p->next;
       }
       printf("\n");
     }
-#if 0
+//#define HTABLE_PRINT_EMPTYBINS
+#ifdef HTABLE_PRINT_EMPTYBINS
     else {
       printf("Bin%d -\n", i);
     }
@@ -295,7 +296,7 @@ void htable_print(htable_t h)
   }
 
   if (!count) {
-    printf("Hash Table is Empty!\n");
+    printf("Empty!\n");
   }
 
   return;

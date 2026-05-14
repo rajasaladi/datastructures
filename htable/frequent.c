@@ -54,9 +54,9 @@ void printArr(int *a, int n) {
 
 int main()
 {
-  int a[100];
   int i, n, freq;
   int ret = 0;
+  static int a[100];
 
   printf("Enter the number of elements: ");
   scanf("%d", &n);
