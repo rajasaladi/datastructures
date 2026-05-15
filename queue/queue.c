@@ -128,7 +128,8 @@ void queue_display(queue_t q, queue_dispfn_t fn)
     if (fn) {
       fn(cur->data);
     } else {
-      printf(" (0x%x) ", (int)cur->data);
+      //printf(" (0x%x) ", (int)cur->data);
+      printf(" %10d", *(int *)cur->data);
     }
     if (!(count & 0x7)) {
       printf("\n");

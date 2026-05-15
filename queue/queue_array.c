@@ -113,7 +113,8 @@ void queue_display(queue_t q, queue_dispfn_t fn)
     if (fn) {
       fn(q->arr + i * q->elem_size);
     } else {
-      printf(" (0x%x) ", (int)((char *)q->arr + i * q->elem_size));
+      //printf(" (0x%x) ", (int)((char *)q->arr + i * q->elem_size));
+      printf(" %10d", *(int *)((char *)q->arr + i * q->elem_size));
     }
     if (!(count & 0x7)) {
       printf("\n");
@@ -126,7 +127,8 @@ void queue_display(queue_t q, queue_dispfn_t fn)
     if (fn) {
       fn(q->arr + i * q->elem_size);
     } else {
-      printf(" (0x%x) ", (int)((char *)q->arr + i * q->elem_size));
+      //printf(" (0x%x) ", (int)((char *)q->arr + i * q->elem_size));
+      printf(" %10d", *(int *)((char *)q->arr + i * q->elem_size));
     }
     if (!(count & 0x7)) {
       printf("\n");

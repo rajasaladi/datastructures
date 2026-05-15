@@ -142,7 +142,8 @@ void stack_display(stack1_t st)
   cur = st->top;
   while(cur) {
     //printf("%4d (0x%x)", cur->element, (int)cur);
-    printf(" (0x%x)", (int)cur->data);
+    //printf(" %10d (0x%p)", *(int *)cur->data, cur->data);
+    printf(" %10d", *(int *)cur->data);
     if (!(count & 0x7)) {
       printf("\n");
     }

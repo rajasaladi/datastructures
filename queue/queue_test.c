@@ -10,7 +10,7 @@
 
 void queue_test_display(void *p)
 {
-  printf("%4d, ", *(int *)p);
+  printf(" %10d", *(int *)p);
 }
 
 void queue_test_empty_queue(queue_t q)

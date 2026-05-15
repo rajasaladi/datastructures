@@ -15,7 +15,7 @@ void display_integer(void *p)
   if (!p) return;
 
   q = (int *)p;
-  printf(" %d", *q);
+  printf(" %10d", *q);
   return;
 }
 

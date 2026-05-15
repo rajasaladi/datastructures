@@ -119,7 +119,8 @@ void stack_display(stack1_t st)
   printf("c:%d ", st->top+1);
   for (i = st->top; i >= 0; i--, count++) {
     //printf("%4d (0x%x)", st->arr[i], (int)&st->arr[i]);
-    printf(" (0x%x)", (int)((char *)st->arr + i * st->elem_size));
+    //printf(" (0x%x)", (int)((char *)st->arr + i * st->elem_size));
+    printf(" %10d", *(int *)((char *)st->arr + i * st->elem_size));
     if (!(count & 0x7)) {
       printf("\n");
     }

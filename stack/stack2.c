@@ -138,7 +138,8 @@ void stack2_display(stack2_t st, customfn_t fn)
     for (i = st->top1; i >= 0; i--, count++) {
       //printf("%4d (0x%x)", st->arr[i], (int)&st->arr[i]);
       if (!fn) {
-        printf(" (0x%x)", (int)((char *)st->arr + i * st->elem_size));
+        //printf(" (0x%x)", (int)((char *)st->arr + i * st->elem_size));
+        printf(" %10d", *(int *)((char *)st->arr + i * st->elem_size));
       } else {
         //fn(&st->arr[i]);
         fn((void *)((char *)st->arr + i * st->elem_size));
@@ -154,7 +155,8 @@ void stack2_display(stack2_t st, customfn_t fn)
   for (i = st->top2; i < st->stacks_size; i++, count++) {
     //printf("%4d (0x%x)", st->arr[i], (int)&st->arr[i]);
     if (!fn) {
-      printf(" (0x%x)", (int)((char *)st->arr + i * st->elem_size));
+      //printf(" (0x%x)", (int)((char *)st->arr + i * st->elem_size));
+      printf(" %10d", *(int *)((char *)st->arr + i * st->elem_size));
     } else {
       //fn(&st->arr[i]);
       fn((void *)((char *)st->arr + i * st->elem_size));
