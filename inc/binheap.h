@@ -39,6 +39,6 @@ void heap_maxheapify(int *a, int n, int i);
 /* buildheap - Builds heap from a given array */
 void heap_buildminheap(int *a, int n);
 void heap_buildmaxheap(int *a, int n);
-void heap_print2(int *a, int n);
+void heap_print2(int *a, int n, heaptype_e type);
 
 #endif /* HEAP_H */

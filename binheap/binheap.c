@@ -10,6 +10,7 @@
 #include <binheap.h>
 
 #define HEAP_DEFAULT_SIZE   256
+#define HEAPTYPE_NAME(htype) ((HEAPTYPE_MIN == (htype))?"Min Heap":"Max Heap")
 
 struct heap_s {
   int *arr;
@@ -388,7 +389,7 @@ void heap_print(heap_t bh)
     return;
   }
 
-  heap_print2(bh->arr, bh->count);
+  heap_print2(bh->arr, bh->count, bh->type);
   return;
 }
 
@@ -402,7 +403,7 @@ void heap_print(heap_t bh)
  * Return: None
  *
 */
-void heap_print2(int *a, int size)
+void heap_print2(int *a, int size, heaptype_e type)
 {
   int i, j;
   int n, nl, bl, e, b, w;
@@ -448,7 +449,7 @@ void heap_print2(int *a, int size)
   nl = 1;
   bl = (w - nl*e)/(2*nl);
 
-  printf("\nHeap:\n");
+  printf("\n%s:\n", HEAPTYPE_NAME(type));
   for (i = 0; i < size; i++) {
 
     /* Print bl spaces before */
