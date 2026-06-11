@@ -51,3 +51,5 @@ from stdin:
 ```
 echo "([]{})" | ./bin/check_paranthesis
 ```
+
+*Documentation generated using [Claude Code](https://claude.com/claude-code).*

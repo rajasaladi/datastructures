@@ -44,3 +44,5 @@ make clean
 | `bin/avl_test2` | Same tests, linked against the array stack/queue |
 
 All test programs are self-contained — just run them.
+
+*Documentation generated using [Claude Code](https://claude.com/claude-code).*

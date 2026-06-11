@@ -38,3 +38,5 @@ No dependencies on other modules.
 | `bin/queue_test2` | Same tests linked against the array queue |
 
 Both test programs are self-contained — just run them.
+
+*Documentation generated using [Claude Code](https://claude.com/claude-code).*

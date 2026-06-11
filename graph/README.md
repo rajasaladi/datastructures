@@ -52,3 +52,5 @@ make clean
 | `bin/graph_test` | Self-contained tests: builds sample graphs and exercises topological ordering, shortest paths (unweighted and Dijkstra) and both MST algorithms |
 
 Just run it — no input files needed.
+
+*Documentation generated using [Claude Code](https://claude.com/claude-code).*

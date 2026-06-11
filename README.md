@@ -108,3 +108,5 @@ stack1_t s = stack_create(100, sizeof(int));
 ```
 gcc -I inc myprog.c -L lib -lstack -o myprog
 ```
+
+*Documentation generated using [Claude Code](https://claude.com/claude-code).*

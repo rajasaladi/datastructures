@@ -57,3 +57,5 @@ element count followed by the elements:
 ./bin/kth_largest < test/kth_input15.txt
 ./bin/kth_largest < test/kth_input100.txt
 ```
+
+*Documentation generated using [Claude Code](https://claude.com/claude-code).*

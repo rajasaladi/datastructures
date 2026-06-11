@@ -31,3 +31,5 @@ No dependencies on other modules.
 | `bin/trie_test` | Self-contained tests: adds a set of words, verifies word and prefix lookups, deletes words and re-verifies, checks the word count |
 
 Just run it — no input files needed.
+
+*Documentation generated using [Claude Code](https://claude.com/claude-code).*

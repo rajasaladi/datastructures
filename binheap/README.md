@@ -49,3 +49,5 @@ followed by the elements:
 ./bin/binheap_test < test/bh_input63.txt
 ./bin/binheap_test < test/bh_input100.txt
 ```
+
+*Documentation generated using [Claude Code](https://claude.com/claude-code).*

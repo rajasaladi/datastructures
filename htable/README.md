@@ -44,3 +44,5 @@ gives the element count followed by the elements:
 ./bin/frequent < test/frequent_max_neg_input.txt    # negative keys
 ./bin/frequent_sorted < test/frequent_sorted_input.txt
 ```
+
+*Documentation generated using [Claude Code](https://claude.com/claude-code).*

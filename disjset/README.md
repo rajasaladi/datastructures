@@ -37,3 +37,5 @@ so build this one first (the top-level Makefile already does).
 | `bin/disjset_test` | Self-contained test: unions all even numbers into one set and all odd numbers into another, then verifies membership of every element |
 
 Just run it — no input files needed.
+
+*Documentation generated using [Claude Code](https://claude.com/claude-code).*
