@@ -8,6 +8,12 @@
 #include <stdio.h>
 #include <sort.h>
 
+/*
+ * Insertion Sort
+ * Runtime complexity: O(n^2)
+ * Space complexity: O(1)
+ *
+*/
 void insertionsort(int *a, int n)
 {
   int i, j, key;
@@ -24,26 +30,3 @@ void insertionsort(int *a, int n)
 
   return;
 }
-
-#if 0
-/* Old code -- Remove */
-void insertionsort(int *a, int n)
-{
-  int i, j, tmp;
-
-  if (!a) return;
-
-  for (i = 1; i < n; i++) {
-    tmp = a[i];
-    for (j = i; j > 0; j--) {
-      if (a[j-1] <= tmp) {
-        break;
-      }
-      a[j] = a[j-1];
-    }
-    a[j] = tmp;
-  }
-
-  return;
-}
-#endif

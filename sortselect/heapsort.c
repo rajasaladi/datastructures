@@ -12,6 +12,7 @@
  *   Function name has 2 appended at the end to avoid
  *   conflict with heapsort present in some default libraries.
  * Time complexity: O(N Log N)
+ * Space complexity: O(1)
 */
 void heapsort2(int *a, int n)
 {
@@ -24,8 +25,13 @@ void heapsort2(int *a, int n)
   heap_buildmaxheap(a, n);
 
   /* 2. In a loop of i = n-1 to 1,
-   *   a. swap 0th element with ith element and
-   *   b. maxheapify at index 0
+   *   a. As 0th element is the max element, we swap 0th element with last
+   *      element i.e. ith element. With this the max element is placed in its
+   *      location.
+   *   b. Now leaving the last (ith) element, maxheapify the heap at index 0
+   *      for the remaining elements in the heap i.e. 0 to i - 1 elements.
+   *      With this the swapped element will be moved to its appropriate
+   *      location in the heap and heap's order is maintained.
   */
   for (i = n-1; i > 0; i--) {
     /* swap a[0] and a[i] */
@@ -40,7 +46,7 @@ void heapsort2(int *a, int n)
  * Note:
  *   Re-orders elements in the input array.
  *
- * Time complexity: O(N LogN)
+ * Time complexity: O(N Log K)
  * Space complexity: O(1)
 */
 int heapselect(int *a, int n, int k)
@@ -73,8 +79,8 @@ int heapselect(int *a, int n, int k)
  * Note:
  *   Useful when elements in input array cannot be re-ordered.
  *
- * Time complexity: O(N LogN)
- * Space complexity: O(1)
+ * Time complexity: O(N Log K)
+ * Space complexity: O(K)
 */
 int heapselect2(int *a, int n, int k)
 {

@@ -1,5 +1,6 @@
 # Object files
 .DS_Store
+.obsidian
 lib/*
 */obj/*
 */bin/*

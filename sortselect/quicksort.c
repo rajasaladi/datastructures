@@ -7,7 +7,10 @@
 */
 #include <stdio.h>
 
+/* Picks last element as the pivot */
 #define QUICKSORT_LAST_PIVOT          0
+
+/* Skips check of array bounds */
 #define QUICKSORT_SKIP_CHECK          0
 
 /*
@@ -173,7 +176,10 @@ void quicksort(int *a, int n)
   return qsort(a, 0, n-1);
 }
 
-/* QSelect - Internal Recursive function to find kth smallest element */
+/* QSelect - Internal Recursive function to find kth smallest element
+ * Note: Recursion is not needed here as there is only one path taken each time.
+ *       Keeping it here for reference.
+*/
 static int qselect (int *a, int k, int left, int right)
 {
   int index;

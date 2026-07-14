@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <sort.h>
 
+/* Prints array */
 void print_array(int *a, int left, int right)
 {
   int i;
@@ -28,6 +29,7 @@ void print_array(int *a, int left, int right)
   return;
 }
 
+/* Copies elements from src array to dst array */
 void copy_array(int *dst, int *src, int n)
 {
   int i;
@@ -44,63 +46,65 @@ void copy_array(int *dst, int *src, int n)
 int main()
 {
   int i, n;
-  int *in, *out, *tmp; /* Dynamic Arrays */
   int test_status = 0; /* Success */
+  int *inputArr, *tmpArr; /* Dynamic Arrays */
 
   printf("Enter the number of elements: ");
   scanf("%d", &n);
 
-  in = (int *)malloc(2 * n * sizeof(int));
-  if (!in) {
+  inputArr = (int *)malloc(n * sizeof(int));
+  tmpArr = (int *)malloc(n * sizeof(int));
+  if (!inputArr || !tmpArr) {
     printf("Out of memory\n");
+    free(inputArr);
+    free(tmpArr);
     return -1;
   }
-  tmp = in + n;
-  //out = tmp + n;
 
   printf("Enter %d elements separated by space:\n", n);
   for (i = 0; i < n; i++) {
-    scanf("%d", &in[i]);
+    scanf("%d", &inputArr[i]);
   }
   printf("Array:\n");
-  print_array(in, 0, n-1);
+  print_array(inputArr, 0, n-1);
 
   /* Bubble Sort */
   printf("\nBubble Sort:\n");
-  copy_array(tmp, in, n);
-  bubblesort(tmp, n);
-  print_array(tmp, 0, n-1);
+  copy_array(tmpArr, inputArr, n);
+  bubblesort(tmpArr, n);
+  print_array(tmpArr, 0, n-1);
 
   /* Insertion Sort */
   printf("\nInsertion Sort:\n");
-  copy_array(tmp, in, n);
-  insertionsort(tmp, n);
-  print_array(tmp, 0, n-1);
+  copy_array(tmpArr, inputArr, n);
+  insertionsort(tmpArr, n);
+  print_array(tmpArr, 0, n-1);
 
   /* Heap Sort */
   printf("\nHeap Sort:\n");
-  copy_array(tmp, in, n);
-  heapsort2(tmp, n);
-  print_array(tmp, 0, n-1);
+  copy_array(tmpArr, inputArr, n);
+  heapsort2(tmpArr, n);
+  print_array(tmpArr, 0, n-1);
 
   /* Merge Sort */
   printf("\nMerge Sort:\n");
-  copy_array(tmp, in, n);
-  mergesort2(tmp, n);
-  print_array(tmp, 0, n-1);
+  copy_array(tmpArr, inputArr, n);
+  mergesort2(tmpArr, n);
+  print_array(tmpArr, 0, n-1);
 
   /* Quick Sort */
   printf("\nQuick Sort:\n");
-  copy_array(tmp, in, n);
-  quicksort(tmp, n);
-  print_array(tmp, 0, n-1);
+  copy_array(tmpArr, inputArr, n);
+  quicksort(tmpArr, n);
+  print_array(tmpArr, 0, n-1);
 
   /* Radix Sort */
   printf("\nRadix Sort:\n");
-  copy_array(tmp, in, n);
-  radixsort2(tmp, n);
-  print_array(tmp, 0, n-1);
+  copy_array(tmpArr, inputArr, n);
+  radixsort2(tmpArr, n);
+  print_array(tmpArr, 0, n-1);
 
-  free(in);
+  free(inputArr);
+  free(tmpArr);
   return 0;
 }
