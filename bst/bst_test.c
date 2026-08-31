@@ -75,5 +75,5 @@ int main(void)
 
   bst_destroy(t);
 
-  return 0;
+  return test_status;
 }

@@ -38,6 +38,10 @@ libs: libdisjset.a
 all: libs disjset_test
 	@echo "Build successful!!"
 
+test: all
+	@../scripts/run_tests.sh \
+		"Disjoint Set:$(BINDIR)/disjset_test"
+
 clean:
 	$(RMDIR) $(OBJDIR)
 	$(RMDIR) $(BINDIR)

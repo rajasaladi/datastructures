@@ -59,6 +59,11 @@ libs: libsort.a
 all: libs sort_test kth_largest
 	@echo "Build successful!!"
 
+test: all
+	@../scripts/run_tests.sh \
+		"Sort Algorithms:$(BINDIR)/sort_test:test/input15.txt" \
+		"Kth Largest (heap/quick select):$(BINDIR)/kth_largest:test/kth_input15.txt"
+
 clean:
 	$(RMDIR) $(OBJDIR)
 	$(RMDIR) $(BINDIR)

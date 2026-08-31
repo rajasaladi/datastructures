@@ -11,7 +11,7 @@
 #include <sort.h>
 
 /* Prints array */
-void print_array(int *a, int left, int right)
+void arrayPrint(int *a, int left, int right)
 {
   int i;
 
@@ -30,7 +30,7 @@ void print_array(int *a, int left, int right)
 }
 
 /* Copies elements from src array to dst array */
-void copy_array(int *dst, int *src, int n)
+void arrayCopy(int *dst, int *src, int n)
 {
   int i;
 
@@ -39,25 +39,50 @@ void copy_array(int *dst, int *src, int n)
   for (i = 0; i < n; i++) {
     dst[i] = src[i];
   }
- 
+
   return;
+}
+
+/* Returns 0 if arrays a and b are element-wise identical, 1 otherwise */
+int arrayCmp(int *a, int *b, int n)
+{
+  int i;
+
+  for (i = 0; i < n; i++) {
+    if (a[i] != b[i]) return 1;
+  }
+
+  return 0;
+}
+
+/* Verifies result against the reference (bubble sort) output */
+int verify_sort(char *name, int *result, int *expected, int n)
+{
+  if (arrayCmp(result, expected, n)) {
+    printf("Test failed! %s result does not match expected sorted order\n", name);
+    return 1;
+  }
+
+  return 0;
 }
 
 int main()
 {
   int i, n;
   int test_status = 0; /* Success */
-  int *inputArr, *tmpArr; /* Dynamic Arrays */
+  int *inputArr, *tmpArr, *expected; /* Dynamic Arrays */
 
   printf("Enter the number of elements: ");
   scanf("%d", &n);
 
   inputArr = (int *)malloc(n * sizeof(int));
   tmpArr = (int *)malloc(n * sizeof(int));
-  if (!inputArr || !tmpArr) {
+  expected = (int *)malloc(n * sizeof(int));
+  if (!inputArr || !tmpArr || !expected) {
     printf("Out of memory\n");
     free(inputArr);
     free(tmpArr);
+    free(expected);
     return -1;
   }
 
@@ -66,45 +91,56 @@ int main()
     scanf("%d", &inputArr[i]);
   }
   printf("Array:\n");
-  print_array(inputArr, 0, n-1);
+  arrayPrint(inputArr, 0, n-1);
 
-  /* Bubble Sort */
+  /* Bubble Sort -- used as the reference result for the other algorithms */
   printf("\nBubble Sort:\n");
-  copy_array(tmpArr, inputArr, n);
+  arrayCopy(tmpArr, inputArr, n);
   bubblesort(tmpArr, n);
-  print_array(tmpArr, 0, n-1);
+  arrayPrint(tmpArr, 0, n-1);
+  arrayCopy(expected, tmpArr, n);
 
   /* Insertion Sort */
   printf("\nInsertion Sort:\n");
-  copy_array(tmpArr, inputArr, n);
+  arrayCopy(tmpArr, inputArr, n);
   insertionsort(tmpArr, n);
-  print_array(tmpArr, 0, n-1);
+  arrayPrint(tmpArr, 0, n-1);
+  test_status |= verify_sort("Insertion Sort", tmpArr, expected, n);
 
   /* Heap Sort */
   printf("\nHeap Sort:\n");
-  copy_array(tmpArr, inputArr, n);
+  arrayCopy(tmpArr, inputArr, n);
   heapsort2(tmpArr, n);
-  print_array(tmpArr, 0, n-1);
+  arrayPrint(tmpArr, 0, n-1);
+  test_status |= verify_sort("Heap Sort", tmpArr, expected, n);
 
   /* Merge Sort */
   printf("\nMerge Sort:\n");
-  copy_array(tmpArr, inputArr, n);
+  arrayCopy(tmpArr, inputArr, n);
   mergesort2(tmpArr, n);
-  print_array(tmpArr, 0, n-1);
+  arrayPrint(tmpArr, 0, n-1);
+  test_status |= verify_sort("Merge Sort", tmpArr, expected, n);
 
   /* Quick Sort */
   printf("\nQuick Sort:\n");
-  copy_array(tmpArr, inputArr, n);
+  arrayCopy(tmpArr, inputArr, n);
   quicksort(tmpArr, n);
-  print_array(tmpArr, 0, n-1);
+  arrayPrint(tmpArr, 0, n-1);
+  test_status |= verify_sort("Quick Sort", tmpArr, expected, n);
 
   /* Radix Sort */
   printf("\nRadix Sort:\n");
-  copy_array(tmpArr, inputArr, n);
+  arrayCopy(tmpArr, inputArr, n);
   radixsort2(tmpArr, n);
-  print_array(tmpArr, 0, n-1);
+  arrayPrint(tmpArr, 0, n-1);
+  test_status |= verify_sort("Radix Sort", tmpArr, expected, n);
+
+  if (!test_status) {
+    printf("\nAll sort algorithms produced correct results!\n");
+  }
 
   free(inputArr);
   free(tmpArr);
-  return 0;
+  free(expected);
+  return test_status;
 }

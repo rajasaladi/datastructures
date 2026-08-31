@@ -76,6 +76,14 @@ libs: libstack.a libstack2.a libstack_array.a
 all: libs stack_test stack2_test stack_array_test check_paranthesis check_paranthesis2
 	@echo "Build successful!!"
 
+test: all
+	@../scripts/run_tests.sh \
+		"Stack (linked list):$(BINDIR)/stack_test" \
+		"Stack (array):$(BINDIR)/stack_array_test" \
+		"Stack2 (linked list):$(BINDIR)/stack2_test" \
+		"Check Parentheses (linked list):$(BINDIR)/check_paranthesis:test/paren_balanced.txt" \
+		"Check Parentheses (array):$(BINDIR)/check_paranthesis2:test/paren_balanced.txt"
+
 clean:
 	$(RMDIR) $(OBJDIR)
 	$(RMDIR) $(BINDIR)

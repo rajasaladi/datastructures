@@ -112,5 +112,5 @@ int main()
   }
 
   free(a);
-  return 0;
+  return test_status;
 }

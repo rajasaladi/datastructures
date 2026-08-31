@@ -41,6 +41,10 @@ libs: libgraph.a
 all: libs graph_test
 	@echo "Build successful!!"
 
+test: all
+	@../scripts/run_tests.sh \
+		"Graph:$(BINDIR)/graph_test"
+
 clean:
 	$(RMDIR) $(OBJDIR)
 	$(RMDIR) $(BINDIR)

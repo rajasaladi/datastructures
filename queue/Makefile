@@ -47,6 +47,11 @@ libs: libqueue.a libqueue_array.a
 all: libs queue_test queue_test2
 	@echo "Build successful!!"
 
+test: all
+	@../scripts/run_tests.sh \
+		"Queue (linked list):$(BINDIR)/queue_test" \
+		"Queue (array):$(BINDIR)/queue_test2"
+
 clean:
 	$(RMDIR) $(OBJDIR)
 	$(RMDIR) $(BINDIR)

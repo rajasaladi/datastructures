@@ -38,6 +38,10 @@ libs: libbinheap.a
 all: libs binheap_test
 	@echo "Build successful!!"
 
+test: all
+	@../scripts/run_tests.sh \
+		"Binary Heap:$(BINDIR)/binheap_test:test/bh_input15.txt"
+
 clean:
 	$(RMDIR) $(OBJDIR)
 	$(RMDIR) $(BINDIR)

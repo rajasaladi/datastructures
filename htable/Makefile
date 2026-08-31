@@ -52,6 +52,12 @@ libs: libhtable.a
 all: libs htable_test frequent frequent_sorted
 	@echo "Build successful!!"
 
+test: all
+	@../scripts/run_tests.sh \
+		"Hash Table:$(BINDIR)/htable_test" \
+		"Most Frequent (hash table):$(BINDIR)/frequent:test/frequent_input.txt" \
+		"Most Frequent (sorted array):$(BINDIR)/frequent_sorted:test/frequent_sorted_input.txt"
+
 clean:
 	$(RMDIR) $(OBJDIR)
 	$(RMDIR) $(BINDIR)

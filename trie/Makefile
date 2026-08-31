@@ -38,6 +38,10 @@ libs: libtrie.a
 all: libs trie_test
 	@echo "Build successful!!"
 
+test: all
+	@../scripts/run_tests.sh \
+		"Trie:$(BINDIR)/trie_test"
+
 clean:
 	$(RMDIR) $(OBJDIR)
 	$(RMDIR) $(BINDIR)

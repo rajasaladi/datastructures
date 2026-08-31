@@ -56,6 +56,13 @@ libs: libbst.a libavl.a
 all: libs bst_test bst_test2 avl_test avl_test2
 	@echo "Build successful!!"
 
+test: all
+	@../scripts/run_tests.sh \
+		"BST (linked queue/stack):$(BINDIR)/bst_test" \
+		"BST (array queue/stack):$(BINDIR)/bst_test2" \
+		"AVL (linked queue/stack):$(BINDIR)/avl_test" \
+		"AVL (array queue/stack):$(BINDIR)/avl_test2"
+
 clean:
 	$(RMDIR) $(OBJDIR)
 	$(RMDIR) $(BINDIR)

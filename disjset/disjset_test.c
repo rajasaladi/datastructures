@@ -109,9 +109,9 @@ int main()
   if (!set) return -1;
   //printf("Disjoint Set created..\n");
 
-  test_status = disjset_test_union_find_random(set, num);
+  test_status |= disjset_test_union_find_random(set, num);
   disjsetDestroy(set);
   //printf("Disjoint Set destroyed..\n");
 
-  return 0;
+  return test_status;
 }
