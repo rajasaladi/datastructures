@@ -107,6 +107,13 @@ int main()
   arrayPrint(tmpArr, 0, n-1);
   test_status |= verify_sort("Insertion Sort", tmpArr, expected, n);
 
+  /* Selection Sort */
+  printf("\nSelection Sort:\n");
+  arrayCopy(tmpArr, inputArr, n);
+  selectionsort(tmpArr, n);
+  arrayPrint(tmpArr, 0, n-1);
+  test_status |= verify_sort("Selection Sort", tmpArr, expected, n);
+
   /* Heap Sort */
   printf("\nHeap Sort:\n");
   arrayCopy(tmpArr, inputArr, n);

@@ -11,6 +11,7 @@
 
 void bubblesort(int *a, int n);
 void insertionsort(int *a, int n);
+void selectionsort(int *a, int n);
 /*
  * NOTE:
  *   Using 2 suffix below to some of the function names due to name conflict

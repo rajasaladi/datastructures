@@ -27,6 +27,9 @@ bubblesort.o: $(OBJDIR) bubblesort.c ../inc/sort.h
 insertionsort.o: $(OBJDIR) insertionsort.c ../inc/sort.h
 	gcc $(INC) -o $(OBJDIR)/insertionsort.o $(CFLAGS) insertionsort.c
 
+selectionsort.o: $(OBJDIR) selectionsort.c ../inc/sort.h
+	gcc $(INC) -o $(OBJDIR)/selectionsort.o $(CFLAGS) selectionsort.c
+
 heapsort.o: $(OBJDIR) heapsort.c ../inc/binheap.h ../inc/sort.h
 	gcc $(INC) -o $(OBJDIR)/heapsort.o $(CFLAGS) heapsort.c
 
@@ -39,8 +42,8 @@ quicksort.o: $(OBJDIR) quicksort.c ../inc/sort.h
 radixsort.o: $(OBJDIR) radixsort.c ../inc/sort.h
 	gcc $(INC) -o $(OBJDIR)/radixsort.o $(CFLAGS) radixsort.c
 
-libsort.a: $(LIBDIR) bubblesort.o insertionsort.o heapsort.o mergesort.o quicksort.o radixsort.o
-	ar -cvq $(LIBDIR)/libsort.a $(OBJDIR)/bubblesort.o $(OBJDIR)/insertionsort.o $(OBJDIR)/heapsort.o $(OBJDIR)/mergesort.o $(OBJDIR)/quicksort.o $(OBJDIR)/radixsort.o
+libsort.a: $(LIBDIR) bubblesort.o insertionsort.o selectionsort.o heapsort.o mergesort.o quicksort.o radixsort.o
+	ar -cvq $(LIBDIR)/libsort.a $(OBJDIR)/bubblesort.o $(OBJDIR)/insertionsort.o $(OBJDIR)/selectionsort.o $(OBJDIR)/heapsort.o $(OBJDIR)/mergesort.o $(OBJDIR)/quicksort.o $(OBJDIR)/radixsort.o
 
 sort_test.o: $(OBJDIR) sort_test.c ../inc/sort.h
 	gcc $(INC) -o $(OBJDIR)/sort_test.o $(CFLAGS) sort_test.c
@@ -48,8 +51,8 @@ sort_test.o: $(OBJDIR) sort_test.c ../inc/sort.h
 kth_largest.o: $(OBJDIR) kth_largest.c ../inc/sort.h
 	gcc $(INC) -o $(OBJDIR)/kth_largest.o $(CFLAGS) kth_largest.c
 
-sort_test: $(BINDIR) sort_test.o bubblesort.o insertionsort.o heapsort.o mergesort.o quicksort.o radixsort.o
-	gcc -o $(BINDIR)/sort_test $(OBJDIR)/sort_test.o $(OBJDIR)/bubblesort.o $(OBJDIR)/insertionsort.o $(OBJDIR)/heapsort.o $(OBJDIR)/mergesort.o $(OBJDIR)/quicksort.o $(OBJDIR)/radixsort.o -L$(LIBDIR) -lbinheap
+sort_test: $(BINDIR) sort_test.o bubblesort.o insertionsort.o selectionsort.o heapsort.o mergesort.o quicksort.o radixsort.o
+	gcc -o $(BINDIR)/sort_test $(OBJDIR)/sort_test.o $(OBJDIR)/bubblesort.o $(OBJDIR)/insertionsort.o $(OBJDIR)/selectionsort.o $(OBJDIR)/heapsort.o $(OBJDIR)/mergesort.o $(OBJDIR)/quicksort.o $(OBJDIR)/radixsort.o -L$(LIBDIR) -lbinheap
 
 kth_largest: $(BINDIR) kth_largest.o heapsort.o quicksort.o
 	gcc -o $(BINDIR)/kth_largest $(OBJDIR)/kth_largest.o $(OBJDIR)/heapsort.o $(OBJDIR)/quicksort.o -L$(LIBDIR) -lbinheap
