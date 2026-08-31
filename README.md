@@ -15,7 +15,7 @@ from the command line.
 | [bst](bst/README.md) | Binary search tree and AVL self-balancing tree | stack, queue |
 | [htable](htable/README.md) | Hash table with separate chaining | — |
 | [binheap](binheap/README.md) | Binary heap (min and max) with array-heap utilities | — |
-| [sortselect](sortselect/README.md) | Sorting algorithms (bubble, insertion, heap, merge, quick, counting/radix) and selection (heap select, quick select) | binheap |
+| [sortselect](sortselect/README.md) | Sorting algorithms (bubble, insertion, selection, heap, merge, quick, counting/radix) and selection (heap select, quick select) | binheap |
 | [trie](trie/README.md) | Trie (prefix tree) over lowercase words | — |
 | [disjset](disjset/README.md) | Disjoint set (union-find) | — |
 | [graph](graph/README.md) | Graph (adjacency list) with topological sort, BFS/Dijkstra shortest paths, Prim's and Kruskal's MST | stack, queue, disjset |

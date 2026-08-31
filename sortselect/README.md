@@ -11,6 +11,7 @@ fully sorting the array.
 |---|---|
 | `bubblesort.c` | Bubble sort |
 | `insertionsort.c` | Insertion sort |
+| `selectionsort.c` | Selection sort |
 | `heapsort.c` | Heap sort (`heapsort2`), heap select (`heapselect`, `heapselect2`) — built on the array-heap utilities from the `binheap` module |
 | `mergesort.c` | Merge sort (`mergesort2`) |
 | `quicksort.c` | Quick sort (`quicksort`), quick select (`quickselect`) |
@@ -20,9 +21,9 @@ All of the sorts are archived into `lib/libsort.a`.
 
 ## Public Interface
 
-`inc/sort.h` — `bubblesort`, `insertionsort`, `heapsort2`, `mergesort2`,
-`quicksort`, `radixsort2`, and the selection functions `heapselect`,
-`heapselect2`, `quickselect`.
+`inc/sort.h` — `bubblesort`, `insertionsort`, `selectionsort`, `heapsort2`,
+`mergesort2`, `quicksort`, `radixsort2`, and the selection functions
+`heapselect`, `heapselect2`, `quickselect`.
 
 Note: some names carry a `2` suffix because BSD libc (used by macOS) already
 defines `heapsort`, `mergesort` and `radixsort` in the standard headers.
